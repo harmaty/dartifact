@@ -79,6 +79,12 @@ class SelectComponent extends Component {
       setValueFromKeypressStack();
     });
 
+    attribute_callbacks["disabled"] = (attr_name, self) {
+      if(self.disabled)
+        this.behave("disable");
+      else
+        this.behave("enable");
+    };
   }
 
   void afterInitialize() {
